@@ -66,6 +66,8 @@ npm run start
    git push -u origin main
    ```
 2. **Import the repository into Vercel** → [vercel.com/new](https://vercel.com/new). Choose **Next.js** (Vercel auto-detects the framework and build settings).
+
+   > **Important — Root Directory:** If your repository root contains the `package.json` (as this project does), leave **Root Directory** as `/`. If you ever see the build error _"Couldn't find any `pages` or `app` directory"_, it means Vercel is scanning the wrong folder — set **Root Directory** to the folder that contains `package.json` (and thus `src/app`). The `vercel.json` in this repo pins the framework/build settings so detection is deterministic.
 3. **Add environment variables** in Project → Settings → Environment Variables:
 
    | Variable | Example | Required |
